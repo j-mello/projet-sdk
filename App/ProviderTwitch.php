@@ -2,7 +2,7 @@
 
 namespace App;
 
-class ProviderGithub extends Provider
+class ProviderTwitch extends Provider
 {
     protected $data = [
         "name" => "Twitch",
@@ -12,8 +12,8 @@ class ProviderGithub extends Provider
     protected $clientId;
     protected $clientSecret;
     protected $uri = "https://www.twitch.tv/";
-    protected $accessLink = "https://id.twitch.tv/oauth2/validate";
-    protected $uriAuth = "https://id.twitch.tv/oauth2/revoke";
+    protected $accessLink = "https://id.twitch.tv/oauth2/authorize";
+    protected $uriAuth = "https://api.twitch.tv/kraken/oauth2/token";
 
     public function __construct(string $client_id, string $client_secret)
     {

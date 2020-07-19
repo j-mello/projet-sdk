@@ -1,14 +1,7 @@
 <?php
 
+include("autoloader.php");
 use App\SDK;
-
-if(file_exists('autoloader.php'))
-{
-    include('autoloader.php');
-} else {
-    die('Fichier non trouvé');
-}
-
 $sdk = new SDK([
     [
         "name" => 'Github',
@@ -18,7 +11,7 @@ $sdk = new SDK([
     [
         "name" => 'Twitch',
         'client_id' => 't49a1d7mw2axag48qrrfuouolj5szg',
-        'client_secret' => 'm4ob394jddj4gh5m38l088owmjquzh'
+        'client_secret' => 'euqmnea1wjeb0li02x8fk20wdsmr74'
     ]
     // Pour chaque nouveau provider, mettre leur nom, client_id et client_secret ici
 ]);

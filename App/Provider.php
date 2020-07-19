@@ -51,7 +51,11 @@ abstract class Provider
             $result = $this->callback($this->uriAuth, $params);
             $string = explode("&", $result, 2)[0];
             $access_token = explode("=", $string)[1];
-        }else{
+        }elseif ($this->data["name"] == "Twitch")
+        {
+            $access_token = $_GET["code"];
+        }else
+            {
             $surl = "{$this->uriAuth}?".http_build_query($params);
             $result = json_decode(file_get_contents($surl), true);
             ['access_token' => $access_token] = $result;

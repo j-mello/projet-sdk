@@ -1,9 +1,12 @@
 <?php
 
+
 function autoloader($className)
 {
-    $class = __DIR__.'/'.$className.'.php';
-    if (file_exists($class)) include $class;
+    $class = "App/".explode("\\",$className)[count(explode("\\",$className))-1].".php";
+    if(file_exists($class)){
+        include $class;
+    }
 }
 
 spl_autoload_register('autoloader');

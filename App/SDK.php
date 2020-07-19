@@ -9,6 +9,7 @@ class SDK
     private static $mySDK = [
         'Github' => ProviderGithub::class,
         'Twitch' => ProviderTwitch::class,
+        'Local' => ProviderLocal::class,
         // Ajouter mes autres provider ici
     ];
 
